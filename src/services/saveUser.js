@@ -5,7 +5,7 @@ export default function saveUser (user) {
     return () => {
         return base(
             request
-                .post('/api/client/user/signup')
+                .post(`${process.env.REACT_APP_API}/user/signup`)
                 .send(user)
         );
     };

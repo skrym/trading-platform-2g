@@ -40,7 +40,7 @@ import getPrices from './services/getPrices';
 
 import { TOKEN_CLIENT_LOCAL_STORAGE_NAME } from './constants/constants';
 
-import styles from './App.modules.scss';
+import styles from './App.module.scss';
 
 const events = new EventEmitter();
 
@@ -138,19 +138,6 @@ class App extends Component {
         }
     };
 
-    renderComponent = Component => ({ location: { pathname } }) => {
-        console.log(typeof window, window)
-        if (typeof window === 'undefined') {
-            return <Component />;
-        }
-
-        const { lang, langRoute, location } = this.props;
-        const langUrl = getLangFromRoute(pathname);
-        const { routeWithoutLang } = getLangRouteParts(pathname);
-
-        return lang === langUrl ? <Component events={events} /> : <Navigate to={`${langRoute}${routeWithoutLang}${location.search}${location.hash}`} />;
-    };
-
     render () {
         const { authenticationFormPopup, accountInfoPopup, paymentsPopup, withdrawPopup } = this.props;
         const { connectionStatus } = this.state;
@@ -161,15 +148,8 @@ class App extends Component {
                 <CookiesAgreement />
                 <div className={styles.pageContentContainer}>
                     <LeftMenu events={events} />
-                    <div className={styles.pageContent}>
                         {/* {!connectionStatus && <ConnectionLost />} */}
-                        {/* <Routes>
-                            <Route exact path='/' render={this.renderComponent(MainPage)} />
-                            <Route exact path='/pl' render={this.renderComponent(MainPage)} />
-                            <Route exact path='/en' render={this.renderComponent(MainPage)} />
-                            <Route render={this.renderComponent(NotFoundPage)} />
-                        </Routes> */}
-                    </div>
+                    <MainPage events={events} />
                 </div>
                 <AuthenticationPopup isVisible={authenticationFormPopup.isPopup} activeIndex={authenticationFormPopup.activeIndex} />
                 <AccountInfoPopup isVisible={accountInfoPopup} />

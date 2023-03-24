@@ -9,7 +9,7 @@ export default function saveMoneyOutput (output) {
 
         return base(
             request
-                .post('/api/client/output/new')
+                .post(`${process.env.REACT_APP_API}/output/new`)
                 .send(output)
                 .query({ token })
         );

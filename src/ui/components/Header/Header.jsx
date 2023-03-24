@@ -34,7 +34,7 @@ const mapDispatchToProps = (dispatch) => ({
 // @lang
 class Header extends Component {
     static propTypes = {
-        lang: PropTypes.string.isRequired,
+        // lang: PropTypes.string.isRequired,
         langMap: PropTypes.object.isRequired,
         events: PropTypes.object.isRequired,
         user: PropTypes.object,

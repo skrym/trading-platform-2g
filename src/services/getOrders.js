@@ -12,7 +12,7 @@ export default function getOrders (page, perPage, closedOrders = []) {
 
         return base(
             request
-                .get('/api/client/order/all')
+                .get(`${process.env.REACT_APP_API}/order/all`)
                 .query({ token, page, perPage })
         )
             .then(payload => {

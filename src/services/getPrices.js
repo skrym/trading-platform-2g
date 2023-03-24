@@ -5,7 +5,7 @@ export default function getPrices () {
     return () => {
         return base(
             request
-                .get(`/api/client/data/prices`)
+                .get(`${process.env.REACT_APP_API}/data/prices`)
         );
     };
 }

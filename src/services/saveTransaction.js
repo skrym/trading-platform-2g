@@ -10,7 +10,7 @@ export default function saveTransaction (transaction) {
 
         return base(
             request
-                .post('/api/client/transaction/new')
+                .post(`${process.env.REACT_APP_API}/transaction/new`)
                 .send(transaction)
                 .query({ token })
         )

@@ -9,7 +9,7 @@ export default function editMessage (id) {
 
         return base(
             request
-                .put('/api/client/message/visit')
+                .put(`${process.env.REACT_APP_API}/message/visit`)
                 .send(id)
                 .query({ token })
         );

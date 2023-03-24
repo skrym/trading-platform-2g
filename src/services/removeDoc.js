@@ -11,7 +11,7 @@ export default function removeDoc (docName) {
 
         return base(
             request
-                .post('/api/client/user/remove-doc')
+                .post(`${process.env.REACT_APP_API}/user/remove-doc`)
                 .query({ token })
                 .send({ docName })
         )

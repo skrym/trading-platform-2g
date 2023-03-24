@@ -11,7 +11,7 @@ export default function closeOrder ({ id, closedOrdersList }) {
 
         return base(
             request
-                .get(`/api/client/order/close/${id}`)
+                .get(`${process.env.REACT_APP_API}/order/close/${id}`)
                 .query({ token })
         )
             .then(payload => {

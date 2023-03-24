@@ -12,7 +12,7 @@ export default function saveOrder (order) {
         // console.log('order', order);
         return base(
             request
-                .post('/api/client/order/new')
+                .post(`${process.env.REACT_APP_API}/order/new`)
                 .send(order)
                 .query({ token })
         )

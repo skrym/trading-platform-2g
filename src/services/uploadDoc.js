@@ -11,7 +11,7 @@ export default function uploadDoc (file) {
 
         return base(
             request
-                .post('/api/client/user/upload-doc')
+                .post(`${process.env.REACT_APP_API}/user/upload-doc`)
                 .query({ token })
                 .send(file)
         )

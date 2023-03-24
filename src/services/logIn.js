@@ -8,7 +8,7 @@ import { TOKEN_CLIENT_LOCAL_STORAGE_NAME } from '../constants/constants';
 export default function logIn (credentials) {
     return dispatch => base(
         request
-            .post('/api/client/authentication/login')
+            .post(`${process.env.REACT_APP_API}/authentication/login`)
             .send(credentials)
     )
         .then(payload => {

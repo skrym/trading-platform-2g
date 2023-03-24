@@ -11,7 +11,7 @@ export default function removeOtherDoc (index) {
 
         return base(
             request
-                .post('/api/client/user/remove-other-doc')
+                .post(`${process.env.REACT_APP_API}/user/remove-other-doc`)
                 .query({ token })
                 .send({ index })
         )

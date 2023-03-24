@@ -26,7 +26,7 @@ const PRICE_UP_COLOR = '#0ea97b';
 const PRICE_DOWN_COLOR = 'rgba(235, 87, 87, 0.75)';
 
 if (typeof window !== 'undefined') {
-    var { createChart } = require('lightweight-charts');
+    var { createChart } = require('lightweight-charts/dist/lightweight-charts.esm.production.js');
 }
 
 const chartOptions = {

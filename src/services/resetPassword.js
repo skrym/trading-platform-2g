@@ -5,7 +5,7 @@ export default function resetPassword (payload) {
     return () => {
         return base(
             request
-                .post('/api/client/user/reset')
+                .post(`${process.env.REACT_APP_API}/user/reset`)
                 .send(payload)
         );
     };

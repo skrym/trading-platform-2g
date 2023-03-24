@@ -5,7 +5,7 @@ export default function sendForm (payload) {
     return () => {
         return base(
             request
-                .post('/api/client/form/reset')
+                .post(`${process.env.REACT_APP_API}/form/reset`)
                 .send(payload)
         );
     };

@@ -10,7 +10,7 @@ export default function authenticate () {
 
         base(
             request
-                .get('/api/client/authentication/check')
+                .get(`${process.env.REACT_APP_API}/authentication/check`)
                 .query({ token })
         )
             .then(payload => {

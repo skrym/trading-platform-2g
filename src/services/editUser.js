@@ -9,7 +9,7 @@ export default function editUser (user) {
 
     return (dispatch) => base(
         request
-            .post('/api/client/user/edit')
+            .post(`${process.env.REACT_APP_API}/user/edit`)
             .query({ token })
             .send(user)
     ).then(payload => {

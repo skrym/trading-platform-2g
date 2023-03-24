@@ -7,7 +7,7 @@ export default function getPayments () {
     return dispatch => {
         return base(
             request
-                .get('/api/client/payments')
+                .get(`${process.env.REACT_APP_API}/payments`)
         )
             .then(payments => {
                 dispatch(setPayments(payments));

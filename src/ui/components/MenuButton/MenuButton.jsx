@@ -80,7 +80,6 @@ class MenuButton extends Component {
 
         this.props.getMessageHistory()
             .then(messages => {
-                // console.log(messages)
                 this.setState({
                     unvisitedMessages: (messages.filter((item) => item.senderId === 'admin' && !item.visited)).length
                 });
@@ -90,7 +89,10 @@ class MenuButton extends Component {
     setCurrenLanguage () {
         if (typeof window !== 'undefined' && localStorage.lang) {
             const lang = _find(LANGUAGES, { langCode: localStorage.lang });
-            const item = _find(COUNTRY_INFO, { name: lang.countryCode });
+            console.log(lang);
+            // TODO
+            // const item = _find(COUNTRY_INFO, { name: lang.countryCode });
+            const item = { id: 58, name: 'GB', callingCode: '+44', flag: '/src/apps/client/constants/images/gb.svg' };
             if (!item) {
                 return;
             }
@@ -101,7 +103,7 @@ class MenuButton extends Component {
 
         if (typeof window !== 'undefined' && !localStorage.lang) {
             // this.state = COUNTRY_INFO[0];
-            const lang = _find(LANGUAGES, { langCode: COUNTRY_INFO[0].name });
+            const lang = { id: 3, langCode: 'en', countryCode: 'GB', name: 'English' }
             this.setState({ currentLanguage: { flag: COUNTRY_INFO[0].flag, id: lang.id, name: lang.name } });
         }
     }
@@ -113,8 +115,10 @@ class MenuButton extends Component {
     }
 
     componentWillReceiveProps (nextProps) {
-        const currentLanguage = _find(LANGUAGES, { langCode: nextProps.lang });
-        const item = _find(COUNTRY_INFO, { name: currentLanguage.countryCode });
+        const currentLanguage = { id: 3, langCode: 'en', countryCode: 'GB', name: 'English' };
+        // TODO
+        // const item = _find(COUNTRY_INFO, { name: currentLanguage.countryCode });
+        const item = { id: 58, name: 'GB', callingCode: '+44', flag: '/src/apps/client/constants/images/gb.svg' };
         this.setState({ currentLanguage: { id: currentLanguage.id, name: currentLanguage.name, flag: item.flag } });
     }
 
@@ -176,7 +180,9 @@ class MenuButton extends Component {
         const langMap = maps[currentLanguage.langCode];
         // typeof window !== 'undefined' ? localStorage.lang = currentLanguage.langCode : '';
 
-        const item = _find(COUNTRY_INFO, { name: currentLanguage.countryCode });
+        // TODO
+        // const item = _find(COUNTRY_INFO, { name: currentLanguage.countryCode });
+        const item = _find(COUNTRY_INFO, { name: 'en' });
         this.setState({ currentLanguage: { id: currentLanguage.id, name: currentLanguage.name, flag: item.flag } });
 
         this.props.setLangMap(langMap);
@@ -310,7 +316,7 @@ class MenuButton extends Component {
                                                 setLanguage={this.handleSetLanguage}
                                                 title={currentLanguage.name}
                                             />
-                                            <div className={stylesPrivateDataFormPopup.topLabel}>{text2.inputs?.country.placeholder}</div>
+                                            <div className={stylesPrivateDataFormPopup.topLabel}>{text2.inputs.country.placeholder}</div>
                                         </div>
                                     </div>
                                 </div>

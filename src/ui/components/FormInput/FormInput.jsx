@@ -32,7 +32,7 @@ class FormInput extends Component {
         handleChange: PropTypes.func.isRequired,
         outsideClickEnabled: PropTypes.bool,
         turnOnClickOutside: PropTypes.func,
-        lang: PropTypes.string.isRequired,
+        // lang: PropTypes.string.isRequired,
         type: PropTypes.string,
         activeStyle: PropTypes.bool
     };

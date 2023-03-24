@@ -9,7 +9,7 @@ export default function getMessageHistory () {
 
         return base(
             request
-                .get('/api/client/message/history')
+                .get(`${process.env.REACT_APP_API}/message/history`)
                 .query({ token })
         );
     };
