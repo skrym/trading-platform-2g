@@ -8,6 +8,8 @@ import propOr from '@tinkoff/utils/object/propOr';
 import classNames from 'classnames';
 
 import styles from './MenuButton.module.scss';
+import flagImages from  '../../../constants/images/flagsExports';
+
 import stylesPrivateDataFormPopup from '../PrivateDataFormPopup/PrivateDataFormPopup.module.scss';
 import { COUNTRY_INFO, SCROLL_TOP_LOCKED_EVENT_NAME, LANGUAGES } from '../../../constants/constants';
 import setAuthenticationPopup from './../../../actions/setAuthenticationPopup';
@@ -24,6 +26,8 @@ import LanguagesSelector from '../LanguagesSelector/LanguagesSelector';
 
 import outsideClick from '../../hocs/outsideClick.jsx';
 import maps from '../../hocs/lang/maps';
+
+import activeButtonIMG from './images/activeButton.svg';
 
 
 const mapStateToProps = ({ application, data }) => {
@@ -92,7 +96,7 @@ class MenuButton extends Component {
             console.log(lang);
             // TODO
             // const item = _find(COUNTRY_INFO, { name: lang.countryCode });
-            const item = { id: 58, name: 'GB', callingCode: '+44', flag: '/src/apps/client/constants/images/gb.svg' };
+            const item = { id: 58, name: 'GB', callingCode: '+44', flag: flagImages.gb };
             if (!item) {
                 return;
             }
@@ -118,7 +122,7 @@ class MenuButton extends Component {
         const currentLanguage = { id: 3, langCode: 'en', countryCode: 'GB', name: 'English' };
         // TODO
         // const item = _find(COUNTRY_INFO, { name: currentLanguage.countryCode });
-        const item = { id: 58, name: 'GB', callingCode: '+44', flag: '/src/apps/client/constants/images/gb.svg' };
+        const item = { id: 58, name: 'GB', callingCode: '+44', flag: flagImages.gb };
         this.setState({ currentLanguage: { id: currentLanguage.id, name: currentLanguage.name, flag: item.flag } });
     }
 
@@ -328,7 +332,7 @@ class MenuButton extends Component {
             })} onClick={this.handlerMenu}>
                 <img className={classNames(styles.buttonImg, {
                     [styles.activeButtonImg]: isMenuOpen
-                })} src="/src/apps/client/ui/components/MenuButton/images/activeButton.svg" alt="" />
+                })} src={activeButtonIMG} alt="" />
                 <div className={classNames(styles.burgerButton, {
                     [styles.menuActive]: isMenuOpen
                 })}>

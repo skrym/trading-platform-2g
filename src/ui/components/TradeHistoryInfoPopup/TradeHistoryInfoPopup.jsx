@@ -17,6 +17,9 @@ import formatPriceToString from '../../../utils/formatPriceToString';
 import getRoundValue from '../../../utils/getRoundValue';
 import { getProfit, getCommission } from '../../../utils/getAssetValues';
 
+import arrowUpIMG from '../Footer/images/arrowUp.svg';
+import arrowDownIMG from '../Footer/images/arrowDown.svg';
+
 const mapStateToProps = ({ application, data }) => {
     return {
         langMap: application.langMap,
@@ -110,8 +113,8 @@ class TradeHistoryInfoPopup extends Component {
                             <img
                                 className={styles.secondImg}
                                 src={item.type === 'buy'
-                                    ? '/src/apps/client/ui/components/Footer/images/arrowUp.svg'
-                                    : '/src/apps/client/ui/components/Footer/images/arrowDown.svg'}
+                                    ? {arrowUpIMG}
+                                    : {arrowDownIMG}}
                                 alt=""
                             />
                         </div>

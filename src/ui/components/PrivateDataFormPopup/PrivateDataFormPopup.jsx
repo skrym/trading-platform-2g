@@ -31,6 +31,12 @@ import editUser from '../../../services/editUser';
 
 import { COUNTRY_INFO } from '../../../constants/constants';
 
+import avatarIMG from './images/avatar.png';
+import arrowDownIMG from './images/arrowDown.svg';
+import dateIMG from './images/date.svg';
+import passwordIMG from './images/password.svg';
+import successIconIMG from './images/successIcon.png';
+
 const MOBILE_VERRSION = 920;
 const GENDER = [
     { id: 1, name: 'male' },
@@ -371,7 +377,7 @@ class PrivateDataFormPopup extends Component {
         return <div className={styles.privateDataContainer} ref={this.form}>
             <div className={styles.mainDataContainer}>
                 <div className={styles.avatarContainer}>
-                    <img src="/src/apps/client/ui/components/PrivateDataFormPopup/images/avatar.png" alt="avatar" />
+                    <img src={avatarIMG} alt="avatar" />
                     {user && user.accountStatus && <img
                         className={styles.wreath}
                         src={`/src/apps/client/ui/components/AuthorizationPanel/images/${user && user.accountStatus}.svg`}
@@ -424,7 +430,7 @@ class PrivateDataFormPopup extends Component {
                     </div>
                     <img className={classNames({
                         [styles.rotateImg]: isGenderOpen
-                    })} src="/src/apps/client/ui/components/PrivateDataFormPopup/images/arrowDown.svg" alt="" />
+                    })} src={arrowDownIMG} alt="" />
                 </div>
                 <div className={styles.birthDateContainerField}>
                     <div className={styles.birthDateContainerFormInput}>
@@ -467,7 +473,7 @@ class PrivateDataFormPopup extends Component {
                             name='dateMask'
                         />}
                     </InputMask>
-                    <img src="/src/apps/client/ui/components/PrivateDataFormPopup/images/date.svg" alt="" />
+                    <img src={dateIMG} alt="" />
                 </div>
                 <div ref={this.phoneContainerRef} className={classNames(styles.phoneContainerField, {
                     [styles.phoneInputActive]: this.state.phone.focus
@@ -575,7 +581,7 @@ class PrivateDataFormPopup extends Component {
                     />
                     <img
                         onClick={this.handlerShowPassword('isNewPasswordShown')}
-                        src="/src/apps/client/ui/components/PrivateDataFormPopup/images/password.svg"
+                        src={passwordIMG}
                         alt=""
                     />
                     <div className={classNames(styles.bottomLabel, styles.bottomPasswordLabel, {
@@ -599,7 +605,7 @@ class PrivateDataFormPopup extends Component {
                     />
                     <img
                         onClick={this.handlerShowPassword('isConfirmPasswordShown')}
-                        src="/src/apps/client/ui/components/PrivateDataFormPopup/images/password.svg"
+                        src={passwordIMG}
                         alt=""
                     />
                 </div>
@@ -610,7 +616,7 @@ class PrivateDataFormPopup extends Component {
             </form>
             <div className={classNames(styles.successPopup, { [styles.active]: isSuccesPopupShow })}>
                 <p className={styles.successPopupTitle}>Сохранение успешно</p>
-                <img src="/src/apps/client/ui/components/PrivateDataFormPopup/images/successIcon.png" alt=""/>
+                <img src={successIconIMG} alt=""/>
             </div>
         </div>;
     }

@@ -1,0 +1,15 @@
+import aud from './aud.svg'
+import cad from './cad.svg'
+import chf from './chf.svg'
+import jpy from './jpy.svg'
+import nzd from './nzd.svg'
+import usd from './usd.svg'
+import eur from './eur.svg'
+import gbp from './gbp.svg'
+import dk from './dk.svg'
+import mx from './mx.svg'
+import nok from './nok.svg'
+import sek from './sek.svg'
+import sgd from './sgd.svg'
+
+export { aud, cad, chf, jpy, nzd, usd, eur, gbp, dk, mx, nok, sek, sgd }

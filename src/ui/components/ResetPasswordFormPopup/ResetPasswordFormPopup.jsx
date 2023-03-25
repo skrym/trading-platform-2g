@@ -15,6 +15,7 @@ import email from '../Form/validators/email';
 import FormInput from '../FormInput/FormInput';
 
 import styles from './ResetPasswordFormPopup.module.scss';
+import circleIMG from './images/circle.svg';
 
 import sendForm from '../../../services/sendForm';
 import resetPassword from '../../../services/resetPassword';
@@ -203,7 +204,7 @@ class ResetPasswordFormPopup extends Component {
                             <div className={styles.popupContent}>
                                 <div className={classNames(styles.content)}>
                                     <div>{text.titleReset}</div>
-                                    <img src="/src/apps/client/ui/components/ResetPasswordFormPopup/images/circle.svg" alt="" />
+                                    <img src={circleIMG} alt="" />
                                 </div>
                             </div>
                         </div>

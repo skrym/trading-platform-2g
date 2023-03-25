@@ -13,6 +13,8 @@ import outsideClick from '../../hocs/outsideClick.jsx';
 import setWithdrawSuccessPopup from '../../../actions/setWithdrawSuccessPopup';
 import setAccountInfoPopup from '../../../actions/setAccountInfoPopup';
 
+import tickIMG from './images/tick.svg';
+
 const mapStateToProps = ({ application }) => {
     return {
         langMap: application.langMap
@@ -74,7 +76,7 @@ class WithdrawSuccessPopup extends Component {
                             <div className={styles.bottomTitle}>
                                 {text.bottomTitle}
                             </div>
-                            <img src="/src/apps/client/ui/components/WithdrawSuccessPopup/images/tick.svg" />
+                            <img src={tickIMG} />
                         </div>
                     </div>
                 </div>

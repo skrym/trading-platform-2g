@@ -7,6 +7,7 @@ import noop from '@tinkoff/utils/function/noop';
 import classNames from 'classnames';
 
 import styles from './LanguagesSelector.module.scss';
+import arrowDownIMG from '../PrivateDataFormPopup/images/arrowDown.svg';
 
 import outsideClick from '../../hocs/outsideClick';
 import { COUNTRY_INFO, LANGUAGES } from '../../../constants/constants';
@@ -80,7 +81,7 @@ class LanguagesSelector extends Component {
             <div>
                 <img className={classNames(styles.iconArrowDown, {
                     [styles.rotateImg]: isLanguageOpen
-                })} src="/src/apps/client/ui/components/PrivateDataFormPopup/images/arrowDown.svg" alt="" />
+                })} src={arrowDownIMG} alt="" />
             </div>
         </div>;
     }

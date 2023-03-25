@@ -14,6 +14,7 @@ import propOr from '@tinkoff/utils/object/propOr';
 import prop from '@tinkoff/utils/object/prop';
 
 import styles from './DocumentInfoPopup.module.scss';
+import okIMG from './images/ok.svg';
 
 const mapStateToProps = ({ application, data }) => {
     return {
@@ -155,7 +156,7 @@ class DocumentInfoPopup extends Component {
                                 className={styles.documentIcon}
                                 src={(doc.id === 'others'
                                     ? uploadedDoc && uploadedDoc.length : uploadedDoc)
-                                    ? '/src/apps/client/ui/components/DocumentInfoPopup/images/ok.svg' : doc.img}
+                                    ? okIMG : doc.img}
                                 alt='doc image'
                             />
                             {uploadedDoc && doc.id !== 'others' && <div className={styles.bottomLabel}>

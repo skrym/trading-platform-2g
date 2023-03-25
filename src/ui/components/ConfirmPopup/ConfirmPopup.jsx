@@ -26,6 +26,12 @@ import { CHART_SYMBOL_INFO_MAP } from '../../../constants/server/symbols';
 import calculateBuyingPrice from '../../../utils/calculateBuyPrice';
 import { NumericFormat } from 'react-number-format';
 
+import posArrowIMG from '../Header/images/posArrow.svg';
+import negArrowIMG from '../Header/images/negArrow.svg';
+import removeButtonIMG from '../Header/images/removeButton.svg';
+import successIconIMG from './img/successIcon.png';
+import infoIMG from './img/info.svg';
+
 let timeout;
 
 const cripto = ['BINANCE:BTCUSDT', 'BINANCE:ETHUSDT', 'BINANCE:LTCUSDT'];
@@ -224,8 +230,8 @@ class ConfirmPopup extends Component {
                 })}>
                     <div className={styles.title}>{text.confirm} {type === 'buy' ? text.confirmPurchase : text.confirmSale}
                         {type === 'buy'
-                            ? <img src="/src/apps/client/ui/components/Header/images/posArrow.svg" alt="" />
-                            : <img src="/src/apps/client/ui/components/Header/images/negArrow.svg" alt="" />
+                            ? <img src={posArrowIMG} alt="" />
+                            : <img src={negArrowIMG} alt="" />
                         }
                     </div>
                     <div className={styles.popupItem}>
@@ -310,7 +316,7 @@ class ConfirmPopup extends Component {
                             !loader.isLoading
                                 ? [<button onClick={this.handlerSubmit} className={styles.confirmButton} key={0}>{text.confirmButton}</button>,
                                     <button onClick={this.handleClose} className={styles.rejectButton} key={1}>
-                                        <img src="/src/apps/client/ui/components/Header/images/removeButton.svg" alt="close" />
+                                        <img src={removeButtonIMG} alt="close" />
                                     </button>
                                 ]
                                 : <div className={styles.preloader}>
@@ -323,14 +329,14 @@ class ConfirmPopup extends Component {
                     [styles.isSuccessPopupVisible]: isSuccessSend && !isFailedSend
                 })}>
                     <div className={styles.title}>{type === 'buy' ? text.purchase : text.sale}{text.successTitle}</div>
-                    <img src="/src/apps/client/ui/components/ConfirmPopup/img/successIcon.png" alt="success" />
+                    <img src={successIconIMG} alt="success" />
                 </div>
             </div>
             <div className={classNames(styles.failedPopup, {
                 [styles.isFailedPopup]: isFailedSend,
                 [styles.sellingIsFailedPopup]: type === 'sell'
             })}>
-                <img src="/src/apps/client/ui/components/ConfirmPopup/img/info.svg" alt="info" />
+                <img src={infoIMG} alt="info" />
                 <div className={styles.title}>
                     {/* eslint-disable-next-line max-len */}
                     {text[`failed${validationError}`]}

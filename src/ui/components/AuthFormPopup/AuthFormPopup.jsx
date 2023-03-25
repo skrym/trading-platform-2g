@@ -21,6 +21,8 @@ import checkAuthentication from '../../../services/checkAuthentication';
 
 import setAuthenticationPopup from '../../../actions/setAuthenticationPopup';
 
+import passwordIMG from './images/password.svg';
+
 const mapStateToProps = ({ application }) => {
     return {
         langMap: application.langMap
@@ -206,7 +208,7 @@ class AuthFormPopup extends Component {
                         />
                         <img
                             onClick={this.handlerShowPassword}
-                            src="/src/apps/client/ui/components/AuthFormPopup/images/password.svg"
+                            src={passwordIMG}
                             alt=""
                         />
                     </div>

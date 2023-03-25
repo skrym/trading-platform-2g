@@ -30,6 +30,11 @@ import checkAuthentication from '../../../services/checkAuthentication';
 import CountrySelector from '../CountrySelector/CountrySelector';
 import { COUNTRY_INFO } from '../../../constants/constants';
 
+import passwordIMG from './images/password.svg';
+import dateIMG from './images/date.svg';
+import emptyIMG from './images/empty.png';
+import checkedIMG from './images/checked.png';
+
 const MOBILE_VERRSION = 920;
 
 const mapStateToProps = ({ application, data }) => {
@@ -360,7 +365,7 @@ class RegistrationFormPopup extends Component {
                         />
                         <img
                             onMouseDown={this.handlerShowPassword}
-                            src="/src/apps/client/ui/components/AuthFormPopup/images/password.svg"
+                            src={passwordIMG}
                             alt=""
                         />
                     </div>
@@ -427,17 +432,17 @@ class RegistrationFormPopup extends Component {
                                 name='dateMask'
                             />}
                         </InputMask>
-                        <img src="/src/apps/client/ui/components/RegistrationFormPopup/images/date.svg" alt="" />
+                        <img src={dateIMG} alt="" />
                         <div className={classNames(styles.dateBottomLabel, {
                             [styles.dateBottomLabelActive]: !this.state['date'].isValid || !this.state['dateInputMaskValue'].isValid
                         })}>{text.inputs.date.validator}</div>
                     </div>
                     <div className={styles.checkboxesContainer}>
                         <div onClick={this.handlerCheckBoxClick('confirm')}>
-                            <img className={styles.emptyCheck} src="/src/apps/client/ui/components/RegistrationFormPopup/images/empty.png" alt="" />
+                            <img className={styles.emptyCheck} src={emptyIMG} alt="" />
                             <img className={classNames(styles.fillCheck, {
                                 [styles.activeCheckbox]: confirm.value
-                            })} src="/src/apps/client/ui/components/RegistrationFormPopup/images/checked.png" alt="" />
+                            })} src={checkedIMG} alt="" />
                             {text.iAccept}<span>{text.termsOfAgreement}</span>
                         </div>
                         <div className={classNames(styles.checkboxError, {

@@ -1,4 +1,5 @@
 /* eslint-disable max-len */
+import currencyImages from './server/icons/currency/currencyExports';
 
 export const CURRENCIES_SYMBOLS = [
     { name: 'OANDA:AUD_CAD', title: 'AUD/CAD', leverage: 100, lotVolume: 100000, imgTop: '/server/constants/icons/currency/aud.svg', imgBottom: 'server/constants/icons/currency/cad.svg' },

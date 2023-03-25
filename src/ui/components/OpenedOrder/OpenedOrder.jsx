@@ -16,6 +16,9 @@ import formatPriceToString from '../../../utils/formatPriceToString';
 import formatNumberToString from '../../../utils/formatNumberToString';
 import numeral from 'numeral';
 
+import arrowIMG from '../Footer/images/arrow.svg';
+import closeIMG from '../Footer/images/close.svg';
+
 const mapDispatchToProps = (dispatch) => ({
     closeOrder: payload => dispatch(closeOrder(payload))
 });
@@ -115,10 +118,10 @@ class OpenedOrder extends PureComponent {
                 }
                 {isConfirmDeal && !isLoading.loading && [
                     <div onClick={this.props.onCloseConfirm} className={styles.arrowIcons} key={0}>
-                        <img src="/src/apps/client/ui/components/Footer/images/arrow.svg" alt="" />
+                        <img src={arrowIMG} alt="" />
                     </div>,
                     <div onClick={this.props.onCloseDecline} className={styles.arrowIcons} key={1}>
-                        <img src="/src/apps/client/ui/components/Footer/images/close.svg" alt="" />
+                        <img src={closeIMG} alt="" />
                     </div>
                 ]}
                 {

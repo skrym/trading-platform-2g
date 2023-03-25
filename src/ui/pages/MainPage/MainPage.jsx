@@ -21,6 +21,8 @@ import styles from './MainPage.module.scss';
 
 import calculateBuyingPrice from '../../../utils/calculateBuyPrice';
 
+import upIMG from './images/up.svg';
+import downIMG from './images/down.svg';
 
 const PRICE_UP_COLOR = '#0ea97b';
 const PRICE_DOWN_COLOR = 'rgba(235, 87, 87, 0.75)';
@@ -514,11 +516,11 @@ class MainPage extends Component {
                         }
                     </div>
                     <div className={styles.purchasePrice}>
-                        <img src="/src/apps/client/ui/pages/MainPage/images/up.svg" />
+                        <img src={upIMG} />
                         <div>{formatPriceToString(asset.purchasePrice)}</div>
                     </div>
                     <div className={styles.sellingPrice}>
-                        <img src="/src/apps/client/ui/pages/MainPage/images/down.svg" />
+                        <img src={downIMG} />
                         <div>{formatPriceToString(asset.sellingPrice)}</div>
                     </div>
                 </div>

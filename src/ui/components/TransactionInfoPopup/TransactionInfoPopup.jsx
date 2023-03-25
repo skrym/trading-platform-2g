@@ -22,6 +22,8 @@ import saveMoneyOutput from '../../../services/saveMoneyOutput';
 import FormInput from '../FormInput/FormInput';
 import checkBalance from '../../../utils/checkBalance';
 
+import infoIMG from '../ConfirmPopup/img/info.svg';
+
 const mapStateToProps = ({ application, data }) => {
     return {
         langMap: application.langMap,
@@ -226,7 +228,7 @@ class TransactionInfoPopup extends Component {
                             <div className={classNames(styles.failedPopup, {
                                 [styles.isFailedPopup]: !this.state['amount'].isValid || error
                             })}>
-                                <img src="/src/apps/client/ui/components/ConfirmPopup/img/info.svg" alt="info" />
+                                <img src={infoIMG} alt="info" />
                                 <div className={styles.title}>
                                     {/* {!this.state['amount'].isValid && (error || 'Недостаточно средств')} */}
                                     {text.error[`failed${!this.state['amount'].isValid || error ? error : ''}`]}

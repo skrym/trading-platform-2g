@@ -12,6 +12,9 @@ import messageWebsocketController from '../../../services/messageWebsocket';
 
 import styles from './ChatPage.module.scss';
 
+import AvatarIMG from './images/Avatar.svg';
+import TriangleIMG from './images/Triangle.svg';
+
 const mapStateToProps = ({ data }) => {
     return {
         userId: data.user.id
@@ -115,7 +118,7 @@ class ChatPage extends Component {
 
                     return <div className={isMyMessage ? styles.messageContainer : styles.messageContainerAdmin} key={i}>
                         <div className={isMyMessage ? styles.avatar : styles.avatarAdmin}>
-                            <img className={styles.image} src='/src/apps/client/ui/pages/ChatPage/images/Avatar.svg' alt="" />
+                            <img className={styles.image} src={AvatarIMG} alt="" />
                         </div>
                         <div className={isMyMessage ? styles.messageInfo : styles.messageInfoAdmin}>
                             <div className={styles.senderTime}>
@@ -142,7 +145,7 @@ class ChatPage extends Component {
                         </div>
                         <div className={styles.button}>
                             <button type='submit'>
-                                <img src='/src/apps/client/ui/pages/ChatPage/images/Triangle.svg' alt="Отправить" />
+                                <img src={TriangleIMG} alt="Отправить" />
                             </button>
                         </div>
                     </div>

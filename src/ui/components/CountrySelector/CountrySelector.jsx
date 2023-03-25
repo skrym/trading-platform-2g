@@ -11,6 +11,8 @@ import outsideClick from '../../hocs/outsideClick';
 import { COUNTRY_INFO } from '../../../constants/constants';
 import langsMap from '../../hocs/lang/maps';
 
+import arrowDownIMG from '../PrivateDataFormPopup/images/arrowDown.svg';
+
 // @outsideClick
 class CountrySelector extends Component {
     static propTypes = {
@@ -73,7 +75,7 @@ class CountrySelector extends Component {
             <div>
                 <img className={classNames(styles.iconArrowDown, {
                     [styles.rotateImg]: isCountryOpen
-                })} src="/src/apps/client/ui/components/PrivateDataFormPopup/images/arrowDown.svg" alt="" />
+                })} src={arrowDownIMG} alt="" />
             </div>
         </div>;
     }
